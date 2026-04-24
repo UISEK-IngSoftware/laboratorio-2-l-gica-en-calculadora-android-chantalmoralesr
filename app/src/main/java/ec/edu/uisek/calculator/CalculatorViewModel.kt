@@ -58,9 +58,12 @@ class CalculatorViewModel: ViewModel (){
         }
     }
 
-    private fun enterOperator(operator: String) {
-        if (number1.isNotBlank()){
-            this.operator = operator
+    private fun enterOperator(op: String) {
+        if (number1.isNotBlank() && number2.isNotBlank() && operator != null) {
+            performCalculation()
+        }
+        if (number1.isNotBlank()) {
+            operator = op
         }
     }
 
